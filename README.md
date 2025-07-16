@@ -1,4 +1,4 @@
-# Sistema de Gestão de Emendas Parlamentares
+# e-Emendas – Sistema de Gestão de Emendas Parlamentares
 Desenvolvi este sistema com o objetivo de gerenciar de forma eficiente as emendas parlamentares propostas por deputados e senadores do Congresso Nacional.
 
 # O que são Emendas Parlamentares?
