@@ -52,8 +52,9 @@ Esta pasta contém arquivos complementares ao projeto **Sistema de Gestão de Em
 
 ## Arquivos disponíveis
 
-- 📄 [Diagramas de classes ](Atividade_Emenda_Parlamentar2AnoB-JonnaseStephan.pdf)  
+- 📄 [Diagramas de classes ][Atividade_Emenda_Parlamentar2AnoB-JonnaseStephan.pdf](https://github.com/user-attachments/files/22158850/Atividade_Emenda_Parlamentar2AnoB-JonnaseStephan.pdf)
+
+## Integrantes)  
   Descreve a estrutura do sistema, modelagem das classes, requisitos e lógica de funcionamento.
 
-## Integrantes
 Jonnas Pedro e stephan Augusto
