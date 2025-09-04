@@ -52,7 +52,7 @@ Esta pasta contém arquivos complementares ao projeto **Sistema de Gestão de Em
 
 ## Arquivos disponíveis
 
-- 📄 [Diagramas de classes ](documentacao_tecnica.pdf)  
+- 📄 [Diagramas de classes ](Atividade_Emenda_Parlamentar2AnoB-JonnaseStephan.pdf)  
   Descreve a estrutura do sistema, modelagem das classes, requisitos e lógica de funcionamento.
 
 ## Integrantes
