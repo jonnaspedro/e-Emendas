@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> e-Emendas </title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+      color: #000000;
+    }
+    header {
+      background: #000000;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    section {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      color: #000000;
+    }
+    pre {
+      background: #000000;
+      color: #0f0;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 10px;
+      background: #000000;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #000000;
+    }
+    footer {
+      background: #000000;
+      color: #ffffff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Projeto: Emendas Parlamentares em Java</h1>
+    <p>Implementação acadêmica com POO</p>
+  </header>
+
+  <section>
+    <h2> Sobre o Projeto</h2>
+    <p>Este projeto foi desenvolvido para simular diferentes tipos de <b>Emendas Parlamentares</b> em Java, utilizando conceitos de Programação Orientada a Objetos (POO), como <i>classes abstratas, herança e polimorfismo</i>.</p>
+  </section>
+
+  <section>
+
+    <h2> Código Java</h2>
+    <pre>
+
+        import java.util.*;
+
+
+    abstract class EmendaParlamentar {
+        protected String id;
+        protected String autor;
+        protected String tipo;
+        protected int ano;
+        protected double valorTotal;
+        protected String programa;
+        protected List<Documento> documentos;
+
+    public EmendaParlamentar(String id, String autor, String tipo, int ano, String programa) {
+        this.id = id;
+        this.autor = autor;
+        this.tipo = tipo;
+        this.ano = ano;
+        this.programa = programa;
+        this.documentos = new ArrayList<>();
+        this.valorTotal = 0;
+    }
+
+    public void adicionarDocumento(Documento doc) {
+        documentos.add(doc);
+        valorTotal += doc.getValor();
+    }
+
+    public void imprimirDocumentos() {
+        for (Documento d : documentos) {
+            System.out.println("   -> " + d);
+        }
+    }
+
+    public abstract void imprimirDados();
+}
+
+    class EmendaIndividual extends EmendaParlamentar {
+        private String tipoTransferencia;
+
+    public EmendaIndividual(String id, String autor, int ano, String programa, String tipoTransferencia) {
+        super(id, autor, "Individual", ano, programa);
+        this.tipoTransferencia = tipoTransferencia;
+    }
+
+    @Override
+    public void imprimirDados() {
+        System.out.println("=== Emenda Individual ===");
+        System.out.println("ID: " + id + " | Autor: " + autor);
+        System.out.println("Ano: " + ano + " | Programa: " + programa);
+        System.out.println("Tipo Transferência: " + tipoTransferencia);
+        System.out.println("Valor Total: " + valorTotal);
+    }
+}
+
+    class Documento {
+        private String data;
+        private String fase;
+        private double valor;
+
+    public Documento(String data, String fase, double valor) {
+        this.data = data;
+        this.fase = fase;
+        this.valor = valor;
+    }
+
+    public String getFase() { return fase; }
+    public double getValor() { return valor; }
+
+    @Override
+    public String toString() {
+        return "[Data: " + data + " | Fase: " + fase + " | Valor: " + valor + "]";
+    }
+}
+
+    public class Main {
+        public static void main(String[] args) {
+        EmendaIndividual e1 = new EmendaIndividual(
+            "E001", "João Campos", 2025, "Saúde", "Finalidade Definida"
+        );
+        e1.adicionarDocumento(new Documento("2025-02-10", "Empenho", 500000));
+        e1.adicionarDocumento(new Documento("2025-03-01", "Pagamento", 300000));
+        e1.imprimirDados();
+        e1.imprimirDocumentos();
+    }
+}
+    </pre>
+    <a class="btn" href="https://www.jdoodle.com/online-java-compiler/" target="_blank">▶ Rodar Online</a>
+  </section>
+
+  <section>
+    <h2> Saída do Programa (Exemplo)</h2>
+    <pre>
+
+    === Emenda Individual ===
+    ID: E001 | Autor: João Campos
+    Ano: 2025 | Programa: Saúde
+    Tipo Transferência: Finalidade Definida
+    Valor Total: 800000.0
+    -> [Data: 2025-02-10 | Fase: Empenho | Valor: 500000.0]
+    -> [Data: 2025-03-01 | Fase: Pagamento | Valor: 300000.0]
+    Total Pago: 300000.0
+    </pre>
+  </section>
+
+  <section>
+    <h2> Como Rodar no Terminal / VS Code</h2>
+    <ol>
+      <li>Instale o <b>JDK 17+</b> no seu computador (<a href="https://adoptium.net/temurin/releases/?version=17" target="_blank">Download aqui</a>).</li>
+      <li>Abra o <b>VS Code</b> na pasta do projeto.</li>
+      <li>No terminal, compile com:
+        <pre>javac Main.java</pre>
+      </li>
+      <li>Depois execute:
+        <pre>java Main</pre>
+      </li>
+      <li>O programa exibirá as informações no console.</li>
+    </ol>
+  </section>
+
+  <footer>
+    <p> 
+        &copy; 2025 Projeto acadêmico - Emendas Parlamentares em Java. Todos os direitos reservados.
+    </p>
+  </footer>
+</body>
+</html>
